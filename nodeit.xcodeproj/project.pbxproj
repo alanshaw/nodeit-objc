@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E765383217B03EC600926854 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E765383117B03EC600926854 /* Cocoa.framework */; };
+		E765383C17B03EC600926854 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E765383A17B03EC600926854 /* InfoPlist.strings */; };
+		E765383E17B03EC600926854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E765383D17B03EC600926854 /* main.m */; };
+		E765384217B03EC600926854 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E765384017B03EC600926854 /* Credits.rtf */; };
+		E765384517B03EC600926854 /* NDTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E765384417B03EC600926854 /* NDTAppDelegate.m */; };
+		E765384817B03EC600926854 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E765384617B03EC600926854 /* MainMenu.xib */; };
+		E765385017B03EC600926854 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E765384F17B03EC600926854 /* SenTestingKit.framework */; };
+		E765385117B03EC600926854 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E765383117B03EC600926854 /* Cocoa.framework */; };
+		E765385917B03EC600926854 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E765385717B03EC600926854 /* InfoPlist.strings */; };
+		E765385C17B03EC600926854 /* nodeitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E765385B17B03EC600926854 /* nodeitTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E765385217B03EC600926854 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E765382617B03EC600926854 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E765382D17B03EC600926854;
+			remoteInfo = nodeit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E765382E17B03EC600926854 /* nodeit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nodeit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E765383117B03EC600926854 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E765383417B03EC600926854 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E765383517B03EC600926854 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E765383617B03EC600926854 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E765383917B03EC600926854 /* nodeit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nodeit-Info.plist"; sourceTree = "<group>"; };
+		E765383B17B03EC600926854 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E765383D17B03EC600926854 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E765383F17B03EC600926854 /* nodeit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nodeit-Prefix.pch"; sourceTree = "<group>"; };
+		E765384117B03EC600926854 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E765384317B03EC600926854 /* NDTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDTAppDelegate.h; sourceTree = "<group>"; };
+		E765384417B03EC600926854 /* NDTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDTAppDelegate.m; sourceTree = "<group>"; };
+		E765384717B03EC600926854 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E765384E17B03EC600926854 /* nodeitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nodeitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E765384F17B03EC600926854 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E765385617B03EC600926854 /* nodeitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "nodeitTests-Info.plist"; sourceTree = "<group>"; };
+		E765385817B03EC600926854 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E765385A17B03EC600926854 /* nodeitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nodeitTests.h; sourceTree = "<group>"; };
+		E765385B17B03EC600926854 /* nodeitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nodeitTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E765382B17B03EC600926854 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E765383217B03EC600926854 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E765384A17B03EC600926854 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E765385017B03EC600926854 /* SenTestingKit.framework in Frameworks */,
+				E765385117B03EC600926854 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E765382517B03EC600926854 = {
+			isa = PBXGroup;
+			children = (
+				E765383717B03EC600926854 /* nodeit */,
+				E765385417B03EC600926854 /* nodeitTests */,
+				E765383017B03EC600926854 /* Frameworks */,
+				E765382F17B03EC600926854 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E765382F17B03EC600926854 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E765382E17B03EC600926854 /* nodeit.app */,
+				E765384E17B03EC600926854 /* nodeitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E765383017B03EC600926854 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E765383117B03EC600926854 /* Cocoa.framework */,
+				E765384F17B03EC600926854 /* SenTestingKit.framework */,
+				E765383317B03EC600926854 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E765383317B03EC600926854 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E765383417B03EC600926854 /* AppKit.framework */,
+				E765383517B03EC600926854 /* CoreData.framework */,
+				E765383617B03EC600926854 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E765383717B03EC600926854 /* nodeit */ = {
+			isa = PBXGroup;
+			children = (
+				E765384317B03EC600926854 /* NDTAppDelegate.h */,
+				E765384417B03EC600926854 /* NDTAppDelegate.m */,
+				E765384617B03EC600926854 /* MainMenu.xib */,
+				E765383817B03EC600926854 /* Supporting Files */,
+			);
+			path = nodeit;
+			sourceTree = "<group>";
+		};
+		E765383817B03EC600926854 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E765383917B03EC600926854 /* nodeit-Info.plist */,
+				E765383A17B03EC600926854 /* InfoPlist.strings */,
+				E765383D17B03EC600926854 /* main.m */,
+				E765383F17B03EC600926854 /* nodeit-Prefix.pch */,
+				E765384017B03EC600926854 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E765385417B03EC600926854 /* nodeitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E765385A17B03EC600926854 /* nodeitTests.h */,
+				E765385B17B03EC600926854 /* nodeitTests.m */,
+				E765385517B03EC600926854 /* Supporting Files */,
+			);
+			path = nodeitTests;
+			sourceTree = "<group>";
+		};
+		E765385517B03EC600926854 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E765385617B03EC600926854 /* nodeitTests-Info.plist */,
+				E765385717B03EC600926854 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E765382D17B03EC600926854 /* nodeit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E765385F17B03EC600926854 /* Build configuration list for PBXNativeTarget "nodeit" */;
+			buildPhases = (
+				E765382A17B03EC600926854 /* Sources */,
+				E765382B17B03EC600926854 /* Frameworks */,
+				E765382C17B03EC600926854 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nodeit;
+			productName = nodeit;
+			productReference = E765382E17B03EC600926854 /* nodeit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E765384D17B03EC600926854 /* nodeitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E765386217B03EC600926854 /* Build configuration list for PBXNativeTarget "nodeitTests" */;
+			buildPhases = (
+				E765384917B03EC600926854 /* Sources */,
+				E765384A17B03EC600926854 /* Frameworks */,
+				E765384B17B03EC600926854 /* Resources */,
+				E765384C17B03EC600926854 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E765385317B03EC600926854 /* PBXTargetDependency */,
+			);
+			name = nodeitTests;
+			productName = nodeitTests;
+			productReference = E765384E17B03EC600926854 /* nodeitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E765382617B03EC600926854 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NDT;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Alan Shaw";
+			};
+			buildConfigurationList = E765382917B03EC600926854 /* Build configuration list for PBXProject "nodeit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E765382517B03EC600926854;
+			productRefGroup = E765382F17B03EC600926854 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E765382D17B03EC600926854 /* nodeit */,
+				E765384D17B03EC600926854 /* nodeitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E765382C17B03EC600926854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E765383C17B03EC600926854 /* InfoPlist.strings in Resources */,
+				E765384217B03EC600926854 /* Credits.rtf in Resources */,
+				E765384817B03EC600926854 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E765384B17B03EC600926854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E765385917B03EC600926854 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E765384C17B03EC600926854 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E765382A17B03EC600926854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E765383E17B03EC600926854 /* main.m in Sources */,
+				E765384517B03EC600926854 /* NDTAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E765384917B03EC600926854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E765385C17B03EC600926854 /* nodeitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E765385317B03EC600926854 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E765382D17B03EC600926854 /* nodeit */;
+			targetProxy = E765385217B03EC600926854 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E765383A17B03EC600926854 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E765383B17B03EC600926854 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E765384017B03EC600926854 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E765384117B03EC600926854 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E765384617B03EC600926854 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E765384717B03EC600926854 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E765385717B03EC600926854 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E765385817B03EC600926854 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E765385D17B03EC600926854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E765385E17B03EC600926854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E765386017B03EC600926854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nodeit/nodeit-Prefix.pch";
+				INFOPLIST_FILE = "nodeit/nodeit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E765386117B03EC600926854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nodeit/nodeit-Prefix.pch";
+				INFOPLIST_FILE = "nodeit/nodeit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E765386317B03EC600926854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/nodeit.app/Contents/MacOS/nodeit";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nodeit/nodeit-Prefix.pch";
+				INFOPLIST_FILE = "nodeitTests/nodeitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E765386417B03EC600926854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/nodeit.app/Contents/MacOS/nodeit";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "nodeit/nodeit-Prefix.pch";
+				INFOPLIST_FILE = "nodeitTests/nodeitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E765382917B03EC600926854 /* Build configuration list for PBXProject "nodeit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E765385D17B03EC600926854 /* Debug */,
+				E765385E17B03EC600926854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E765385F17B03EC600926854 /* Build configuration list for PBXNativeTarget "nodeit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E765386017B03EC600926854 /* Debug */,
+				E765386117B03EC600926854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E765386217B03EC600926854 /* Build configuration list for PBXNativeTarget "nodeitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E765386317B03EC600926854 /* Debug */,
+				E765386417B03EC600926854 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E765382617B03EC600926854 /* Project object */;
+}
