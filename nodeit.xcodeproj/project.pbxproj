@@ -19,6 +19,7 @@
 		E765385C17B03EC600926854 /* nodeitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E765385B17B03EC600926854 /* nodeitTests.m */; };
 		E765388017B0426200926854 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = E765387F17B0426200926854 /* icon.iconset */; };
 		E765388217B045A600926854 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E765388117B045A600926854 /* WebKit.framework */; };
+		E7FB749517B05DA000910EC0 /* nodeit in Resources */ = {isa = PBXBuildFile; fileRef = E7FB749417B05DA000910EC0 /* nodeit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E765385B17B03EC600926854 /* nodeitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nodeitTests.m; sourceTree = "<group>"; };
 		E765387F17B0426200926854 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		E765388117B045A600926854 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E7FB749417B05DA000910EC0 /* nodeit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = nodeit; path = ../../../intellij/fsd/nodeit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,6 @@
 		E765382517B03EC600926854 = {
 			isa = PBXGroup;
 			children = (
-				E765388117B045A600926854 /* WebKit.framework */,
 				E765383717B03EC600926854 /* nodeit */,
 				E765385417B03EC600926854 /* nodeitTests */,
 				E765383017B03EC600926854 /* Frameworks */,
@@ -100,6 +101,7 @@
 		E765383017B03EC600926854 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E765388117B045A600926854 /* WebKit.framework */,
 				E765383117B03EC600926854 /* Cocoa.framework */,
 				E765384F17B03EC600926854 /* SenTestingKit.framework */,
 				E765383317B03EC600926854 /* Other Frameworks */,
@@ -120,6 +122,7 @@
 		E765383717B03EC600926854 /* nodeit */ = {
 			isa = PBXGroup;
 			children = (
+				E7FB749417B05DA000910EC0 /* nodeit */,
 				E765384317B03EC600926854 /* NDTAppDelegate.h */,
 				E765384417B03EC600926854 /* NDTAppDelegate.m */,
 				E765384617B03EC600926854 /* MainMenu.xib */,
@@ -236,6 +239,7 @@
 				E765384217B03EC600926854 /* Credits.rtf in Resources */,
 				E765384817B03EC600926854 /* MainMenu.xib in Resources */,
 				E765388017B0426200926854 /* icon.iconset in Resources */,
+				E7FB749517B05DA000910EC0 /* nodeit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +465,7 @@
 				E765386117B03EC600926854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E765386217B03EC600926854 /* Build configuration list for PBXNativeTarget "nodeitTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +474,7 @@
 				E765386417B03EC600926854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

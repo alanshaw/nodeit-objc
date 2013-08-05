@@ -10,9 +10,13 @@
 
 @implementation NDTAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
+@synthesize webView;
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"nodeit"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
+    
+    [[webView mainFrame] loadRequest:request];
 }
 
 @end
