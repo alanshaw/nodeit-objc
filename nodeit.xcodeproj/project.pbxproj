@@ -17,6 +17,8 @@
 		E765385117B03EC600926854 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E765383117B03EC600926854 /* Cocoa.framework */; };
 		E765385917B03EC600926854 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E765385717B03EC600926854 /* InfoPlist.strings */; };
 		E765385C17B03EC600926854 /* nodeitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E765385B17B03EC600926854 /* nodeitTests.m */; };
+		E765388017B0426200926854 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = E765387F17B0426200926854 /* icon.iconset */; };
+		E765388217B045A600926854 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E765388117B045A600926854 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		E765385817B03EC600926854 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E765385A17B03EC600926854 /* nodeitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nodeitTests.h; sourceTree = "<group>"; };
 		E765385B17B03EC600926854 /* nodeitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nodeitTests.m; sourceTree = "<group>"; };
+		E765387F17B0426200926854 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
+		E765388117B045A600926854 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E765388217B045A600926854 /* WebKit.framework in Frameworks */,
 				E765383217B03EC600926854 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +80,7 @@
 		E765382517B03EC600926854 = {
 			isa = PBXGroup;
 			children = (
+				E765388117B045A600926854 /* WebKit.framework */,
 				E765383717B03EC600926854 /* nodeit */,
 				E765385417B03EC600926854 /* nodeitTests */,
 				E765383017B03EC600926854 /* Frameworks */,
@@ -125,6 +131,7 @@
 		E765383817B03EC600926854 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E765387F17B0426200926854 /* icon.iconset */,
 				E765383917B03EC600926854 /* nodeit-Info.plist */,
 				E765383A17B03EC600926854 /* InfoPlist.strings */,
 				E765383D17B03EC600926854 /* main.m */,
@@ -228,6 +235,7 @@
 				E765383C17B03EC600926854 /* InfoPlist.strings in Resources */,
 				E765384217B03EC600926854 /* Credits.rtf in Resources */,
 				E765384817B03EC600926854 /* MainMenu.xib in Resources */,
+				E765388017B0426200926854 /* icon.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
