@@ -3,12 +3,29 @@
 
 > Objective-C wrapper for the [nodeit](https://github.com/alanshaw/nodeit) text editor
 
-## API requirements
 
-### From nodeit to container
+## Container functionality notes
 
+* Create `~/.nodeit` folder for installed plugins and themes
+* Inject plugin code into WebView
+* Read and expose config to editor e.g. `~/.nodeitrc` ([look in usual places for configuration](https://github.com/dominictarr/rc#standards))
+
+### Container API
+
+#### From nodeit to container
+
+* Supports - whether the container supports a certain feature or not
 * Close window (all tabs closed)
+* Save
+* Read config
 
-### From container to nodeit
+#### From container to nodeit
 
 * onOpenFile
+* onConfigChange
+
+
+## TODO
+
+* Define Plugin API
+* Define Theme API (just a CSS file!)
