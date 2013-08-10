@@ -11,11 +11,15 @@
 
 @interface NDTBridgeTo : NSObject
 
-@property (assign) WebScriptObject *windowObject;
+@property WebScriptObject *windowObject;
 
-- (void) attachToWindowObject:(WebScriptObject *)wo;
+#pragma mark -
+#pragma mark NDTBridgeTo
 
+- (void)attachToWindowObject:(WebScriptObject *)wo;
 - (void)call:(WebScriptObject *)cb error:(NSString *)msg arguments:(NSArray *)args;
 - (void)emit:(NSString *)eventName withArguments:(NSArray *)args;
+
+- (void)open:(NSString *)path;
 
 @end

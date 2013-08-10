@@ -12,16 +12,20 @@
 
 @interface NDTBridgeFrom : NSObject
 
-@property (assign) WebScriptObject *windowObject;
-@property (assign) NDTBridgeTo *bridgeTo;
+@property WebScriptObject *windowObject;
+@property NDTBridgeTo *bridgeTo;
 
-- (void) attachToWindowObject:(WebScriptObject *)wo;
+#pragma mark -
+#pragma mark WebScripting protocol
 
-/* WebScripting methods */
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)selector;
 + (BOOL)isKeyExcludedFromWebScript:(const char *)property;
-+ (NSString *) webScriptNameForSelector:(SEL)sel;
++ (NSString *)webScriptNameForSelector:(SEL)sel;
 
+#pragma mark -
+#pragma mark NDTBridgeFrom
+
+- (void)attachToWindowObject:(WebScriptObject *)wo;
 - (void)log:(NSObject *)msg;
 - (void)save:(NSString *)path contents:(NSString *)contents cb:(WebScriptObject *)cb;
 

@@ -8,13 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
+#import "NDTBridgeTo.h"
 
 @interface NDTAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet WebView *webView;
+@property NDTBridgeTo *bridgeTo;
 
-/* WebFrameLoadDelegate method */
-- (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowObject forFrame:(WebFrame *)frame;
+#pragma mark -
+#pragma mark NDTAppDelegate
+
+- (IBAction)newDocument:(id)sender;
 
 @end

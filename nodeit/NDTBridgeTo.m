@@ -12,6 +12,9 @@
 
 @synthesize windowObject;
 
+#pragma mark -
+#pragma mark NDTBridgeTo
+
 - (void) dealloc {
 	windowObject = nil;
 }
@@ -49,8 +52,28 @@
 - (void)emit:(NSString *)eventName withArguments:(NSArray *)args {
     NSLog(@"nodeit.emit %@ %@", eventName, args);
     
-    [windowObject callWebScriptMethod:@"nodeit.emit"
-                        withArguments:[[NSArray arrayWithObject:eventName] arrayByAddingObjectsFromArray:args]];
+    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    
+    [nodeit callWebScriptMethod:@"emit"
+                  withArguments:[[NSArray arrayWithObject:eventName] arrayByAddingObjectsFromArray:args]];
+}
+
+- (void)open:(NSString *)path {
+    NSString *contents = @"";
+    
+    if (path == nil || [path isEqual: @""]) {
+        path = @"";
+        NSLog(@"New file");
+    } else {
+        NSLog(@"Open file %@", path);
+        
+        // TODO: Read file contents
+    }
+    
+    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    
+    [nodeit callWebScriptMethod:@"open"
+                  withArguments:[NSArray arrayWithObjects:path, contents, nil]];
 }
 
 @end
