@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E753C32017B59F91005CAF76 /* NDTBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E753C31F17B59F91005CAF76 /* NDTBridge.m */; };
 		E765383217B03EC600926854 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E765383117B03EC600926854 /* Cocoa.framework */; };
 		E765383C17B03EC600926854 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E765383A17B03EC600926854 /* InfoPlist.strings */; };
 		E765383E17B03EC600926854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E765383D17B03EC600926854 /* main.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E753C31E17B59F91005CAF76 /* NDTBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDTBridge.h; sourceTree = "<group>"; };
+		E753C31F17B59F91005CAF76 /* NDTBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDTBridge.m; sourceTree = "<group>"; };
 		E765382E17B03EC600926854 /* nodeit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nodeit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E765383117B03EC600926854 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E765383417B03EC600926854 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				E765384417B03EC600926854 /* NDTAppDelegate.m */,
 				E765384617B03EC600926854 /* MainMenu.xib */,
 				E765383817B03EC600926854 /* Supporting Files */,
+				E753C31E17B59F91005CAF76 /* NDTBridge.h */,
+				E753C31F17B59F91005CAF76 /* NDTBridge.m */,
 			);
 			path = nodeit;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			files = (
 				E765383E17B03EC600926854 /* main.m in Sources */,
 				E765384517B03EC600926854 /* NDTAppDelegate.m in Sources */,
+				E753C32017B59F91005CAF76 /* NDTBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
