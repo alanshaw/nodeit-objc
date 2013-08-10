@@ -1,14 +1,14 @@
 //
-//  NDTBridge.m
+//  NDTBridgeTo.m
 //  nodeit
 //
-//  Created by Alan Shaw on 09/08/2013.
+//  Created by Alan Shaw on 10/08/2013.
 //  Copyright (c) 2013 Alan Shaw. All rights reserved.
 //
 
-#import "NDTBridge.h"
+#import "NDTBridgeTo.h"
 
-@implementation NDTBridge
+@implementation NDTBridgeTo
 
 @synthesize windowObject;
 
@@ -19,8 +19,6 @@
 - (void) attachToWindowObject:(WebScriptObject *)wo {
     windowObject = wo;
     
-    [wo setValue:self forKey:@"nodeitBridge"];
-    
     /**
      * Invoke a function with the passed args. Used by the bridge to invoke callback functions.
      *
@@ -28,15 +26,6 @@
      * @param {*} ... Variable length args to pass to the function
      */
     [wo evaluateWebScript:@"window.nodeitBridgeCall = function (fn, er) { var args = Array.prototype.slice.call(arguments, 1); if (er) { args[0] = new Error(er) } fn.apply(window, args) }"];
-}
-
-- (void)log:(NSObject *)msg {
-    NSLog(@"%@", msg);
-}
-
-- (void)save:(NSString *)path contents:(NSString *)contents cb:(WebScriptObject *)cb {
-    NSLog(@"Saving %@", path);
-    [self call:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
 }
 
 // Call a javascript callback passed to the bridge from the other side
@@ -62,38 +51,6 @@
     
     [windowObject callWebScriptMethod:@"nodeit.emit"
                         withArguments:[[NSArray arrayWithObject:eventName] arrayByAddingObjectsFromArray:args]];
-}
-
-/* WebScripting methods */
-
-+ (NSString *)webScriptNameForSelector:(SEL)sel {
-    if (sel == @selector(log:)) {
-        return @"log";
-    }
-    if (sel == @selector(save:contents:cb:)) {
-        return @"save";
-    }
-    return nil;
-}
-
-+ (BOOL)isSelectorExcludedFromWebScript:(SEL)sel {
-    if (sel == @selector(attachToWindowObject:)) {
-        return YES;
-    }
-    if (sel == @selector(call:error:arguments:)) {
-        return YES;
-    }
-    if (sel == @selector(emit:withArguments:)) {
-        return YES;
-    }
-    if (sel == @selector(dealloc:)) {
-        return YES;
-    }
-    return NO;
-}
-
-+ (BOOL)isKeyExcludedFromWebScript:(const char *)property {
-    return NO;
 }
 
 @end

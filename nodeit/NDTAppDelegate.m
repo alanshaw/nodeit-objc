@@ -7,7 +7,8 @@
 //
 
 #import "NDTAppDelegate.h"
-#import "NDTBridge.h"
+#import "NDTBridgeFrom.h"
+#import "NDTBridgeTo.h"
 
 @implementation NDTAppDelegate
 
@@ -22,9 +23,16 @@
     [[webView mainFrame] loadRequest:request];
 }
 
-- (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowObject forFrame:(WebFrame *)frame {    
-    NDTBridge *bridge = [[NDTBridge alloc] init];
-    [bridge attachToWindowObject:windowObject];
+- (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowObject forFrame:(WebFrame *)frame {
+    NDTBridgeTo *bridgeTo = [[NDTBridgeTo alloc] init];
+    
+    [bridgeTo attachToWindowObject:windowObject];
+    
+    NDTBridgeFrom *bridgeFrom = [[NDTBridgeFrom alloc] init];
+    
+    [bridgeFrom attachToWindowObject:windowObject];
+    
+    bridgeFrom.bridgeTo = bridgeTo;
 }
 
 @end
