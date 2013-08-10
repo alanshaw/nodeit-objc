@@ -128,10 +128,10 @@
 				E7FB749417B05DA000910EC0 /* nodeit */,
 				E765384317B03EC600926854 /* NDTAppDelegate.h */,
 				E765384417B03EC600926854 /* NDTAppDelegate.m */,
-				E765384617B03EC600926854 /* MainMenu.xib */,
-				E765383817B03EC600926854 /* Supporting Files */,
 				E753C31E17B59F91005CAF76 /* NDTBridge.h */,
 				E753C31F17B59F91005CAF76 /* NDTBridge.m */,
+				E765384617B03EC600926854 /* MainMenu.xib */,
+				E765383817B03EC600926854 /* Supporting Files */,
 			);
 			path = nodeit;
 			sourceTree = "<group>";

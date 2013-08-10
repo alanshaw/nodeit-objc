@@ -22,21 +22,9 @@
     [[webView mainFrame] loadRequest:request];
 }
 
-- (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowObject forFrame:(WebFrame *)frame {
-	NSLog(@"%@ received %@", self, NSStringFromSelector(_cmd));
-    
+- (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowObject forFrame:(WebFrame *)frame {    
     NDTBridge *bridge = [[NDTBridge alloc] init];
-    
-    [windowObject setValue:bridge forKey:@"nodeitBridge"];
-}
-
-- (void)emit:(NSString *)eventName withArguments:(NSArray *)args {
-    NSLog(@"nodeit.emit %@ %@", eventName, args);
-    
-    id win = [webView windowScriptObject];
-    
-    [win callWebScriptMethod:@"nodeit.emit"
-               withArguments:[[NSArray arrayWithObject:eventName] arrayByAddingObjectsFromArray:args]];
+    [bridge attachToWindowObject:windowObject];
 }
 
 @end

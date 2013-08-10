@@ -14,8 +14,6 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet WebView *webView;
 
-- (void)emit:(NSString *)eventName withArguments:(NSArray *)args;
-
 /* WebFrameLoadDelegate method */
 - (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowObject forFrame:(WebFrame *)frame;
 
