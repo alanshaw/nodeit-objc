@@ -20,6 +20,9 @@
     if (sel == @selector(log:)) {
         return @"log";
     }
+    if (sel == @selector(open:cb:)) {
+        return @"open";
+    }
     if (sel == @selector(save:contents:cb:)) {
         return @"save";
     }
@@ -56,18 +59,67 @@
     NSLog(@"> %@", msg);
 }
 
+- (void)open:(NSString *)path cb:(WebScriptObject *)cb {
+    NSError *er = nil;
+    
+    if (path == nil || path == [WebUndefined undefined] || [path isEqualToString:@""]) {
+        NSLog(@"Open");
+        
+        NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+        [openPanel setAllowsMultipleSelection:YES];
+        NSInteger result = [openPanel runModal];
+        
+        if (result == NSFileHandlingPanelOKButton) {
+            NSLog(@"%@", openPanel.filenames);
+            
+            if ([openPanel.filenames count] == 1) {
+                NSString *contents = [[NSString alloc] initWithContentsOfFile:[openPanel.filenames objectAtIndex:0]
+                                                                     encoding:NSStringEncodingConversionAllowLossy
+                                                                        error:&er];
+                if (er == nil) {
+                    [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:[openPanel.filenames objectAtIndex:0], contents, nil]];
+                } else {
+                    NSLog(@"%@", er);
+                    [bridgeTo call:cb error:[er description] arguments:nil];
+                }
+                
+            } else {
+                for (id path in openPanel.filenames) {
+                    [bridgeTo open:path];
+                }
+            }
+            
+        } else {
+            [bridgeTo call:cb error:@"cancelled" arguments:nil];
+        }
+        
+    } else {
+        NSLog(@"Open file %@", path);
+        
+        NSString *contents = [[NSString alloc] initWithContentsOfFile:path
+                                                             encoding:NSStringEncodingConversionAllowLossy
+                                                                error:&er];
+        if (er == nil) {
+            [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
+        } else {
+            NSLog(@"%@", er);
+            [bridgeTo call:cb error:[er description] arguments:nil];
+        }
+    }
+}
+
 - (void)save:(NSString *)path contents:(NSString *)contents cb:(WebScriptObject *)cb {
     NSError *er = nil;
     
-    if (path == nil || [path isEqualToString:@""]) {
+    if (path == nil || path == [WebUndefined undefined] || [path isEqualToString:@""]) {
         NSLog(@"Save new");
         
-        NSSavePanel *save = [NSSavePanel savePanel];
-        NSInteger result = [save runModal];
+        NSSavePanel *savePanel = [NSSavePanel savePanel];
+        NSInteger result = [savePanel runModal];
         
         if (result == NSFileHandlingPanelOKButton) {
         
-            path = save.filename;
+            path = savePanel.filename;
             
             if ([contents writeToFile:path atomically:YES encoding:NSStringEncodingConversionAllowLossy error:&er]) {
                 [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
@@ -90,7 +142,6 @@
             [bridgeTo call:cb error:[er description] arguments:nil];
         }
     }
-    
 }
 
 @end

@@ -58,22 +58,25 @@
                   withArguments:[[NSArray arrayWithObject:eventName] arrayByAddingObjectsFromArray:args]];
 }
 
-- (void)open:(NSString *)path {
-    NSString *contents = @"";
-    
-    if (path == nil || [path isEqualToString: @""]) {
-        path = @"";
-        NSLog(@"New file");
-    } else {
-        NSLog(@"Open file %@", path);
-        
-        // TODO: Read file contents
-    }
-    
+// Create a new file
+- (void)neu {
+    NSLog(@"New file");
     WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
-    
-    [nodeit callWebScriptMethod:@"open"
-                  withArguments:[NSArray arrayWithObjects:path, contents, nil]];
+    [nodeit callWebScriptMethod:@"neu" withArguments:nil];
+}
+
+// Open an unknown file (select file from dialog)
+- (void)open {
+    NSLog(@"Open unknown file");
+    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    [nodeit callWebScriptMethod:@"open" withArguments:nil];
+}
+
+// Open a particular file
+- (void)open:(NSString *)path {
+    NSLog(@"Open file %@", path);
+    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    [nodeit callWebScriptMethod:@"open" withArguments:[NSArray arrayWithObject:path]];
 }
 
 - (void)save {

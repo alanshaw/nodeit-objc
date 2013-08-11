@@ -20,6 +20,8 @@
 - (void)call:(WebScriptObject *)cb error:(NSString *)msg arguments:(NSArray *)args;
 - (void)emit:(NSString *)eventName withArguments:(NSArray *)args;
 
+- (void)neu;
+- (void)open;
 - (void)open:(NSString *)path;
 - (void)save;
 

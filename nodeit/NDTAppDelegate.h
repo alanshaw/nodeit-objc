@@ -21,5 +21,6 @@
 
 - (IBAction)newDocument:(id)sender;
 - (IBAction)saveDocument:(id)sender;
+- (IBAction)openDocument:(id)sender;
 
 @end

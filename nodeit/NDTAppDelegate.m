@@ -52,11 +52,15 @@
 #pragma mark NDTAppDelegate
 
 - (IBAction)newDocument:(id)sender {
-    [bridgeTo open:nil];
+    [bridgeTo neu];
 }
 
 - (IBAction)saveDocument:(id)sender {
     [bridgeTo save];
+}
+
+- (IBAction)openDocument:(id)sender {
+    [bridgeTo open];
 }
 
 @end
