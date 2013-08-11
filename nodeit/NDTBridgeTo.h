@@ -9,16 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <WebKit/WebScriptObject.h>
 
-@interface NDTBridgeTo : NSObject
+@interface NDTBridgeTo : NSObject {
+    BOOL _ready;
+}
 
 @property WebScriptObject *windowObject;
+@property (nonatomic, assign) BOOL ready;
+@property NSArray *pathsToOpen; // A list of paths to open when nodeit is ready
 
 #pragma mark -
 #pragma mark NDTBridgeTo
 
 - (void)attachToWindowObject:(WebScriptObject *)wo;
-- (void)call:(WebScriptObject *)cb error:(NSString *)msg arguments:(NSArray *)args;
-- (void)emit:(NSString *)eventName withArguments:(NSArray *)args;
+- (void)callback:(WebScriptObject *)cb error:(NSString *)msg arguments:(NSArray *)args;
 
 - (void)neu;
 - (void)open;

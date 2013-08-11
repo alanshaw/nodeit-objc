@@ -27,6 +27,7 @@
 
 - (void)attachToWindowObject:(WebScriptObject *)wo;
 - (void)log:(NSObject *)msg;
+- (void)ready;
 - (void)open:(NSString *)path cb:(WebScriptObject *)cb;
 - (void)save:(NSString *)path contents:(NSString *)contents cb:(WebScriptObject *)cb;
 

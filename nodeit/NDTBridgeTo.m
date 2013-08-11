@@ -11,15 +11,17 @@
 @implementation NDTBridgeTo
 
 @synthesize windowObject;
+@synthesize ready = _ready;
+@synthesize pathsToOpen;
 
 #pragma mark -
 #pragma mark NDTBridgeTo
 
-- (void) dealloc {
+- (void)dealloc {
 	windowObject = nil;
 }
 
-- (void) attachToWindowObject:(WebScriptObject *)wo {
+- (void)attachToWindowObject:(WebScriptObject *)wo {
     windowObject = wo;
     
     /**
@@ -31,8 +33,22 @@
     [wo evaluateWebScript:@"window.nodeitBridgeCall = function (fn, er) { var args = Array.prototype.slice.call(arguments, 1); if (er) { args[0] = new Error(er) } fn.apply(window, args) }"];
 }
 
+- (void)setReady:(BOOL)readyState {
+    _ready = readyState;
+    if (_ready) {
+        if (pathsToOpen != nil) {
+            for (id path in pathsToOpen) {
+                [self open:path];
+            }
+            pathsToOpen = nil;
+        } else {
+            [self neu];
+        }
+    }
+}
+
 // Call a javascript callback passed to the bridge from the other side
-- (void)call:(WebScriptObject *)cb error:(NSString *)msg arguments:(NSArray *)args {
+- (void)callback:(WebScriptObject *)cb error:(NSString *)msg arguments:(NSArray *)args {
     if (msg == nil) {
         msg = @"";
     }
@@ -46,16 +62,6 @@
     NSLog(@"nodeitBridgeCall %@", args);
     
     [windowObject callWebScriptMethod:@"nodeitBridgeCall" withArguments:args];
-}
-
-// Emit an event on the nodeit javascript object
-- (void)emit:(NSString *)eventName withArguments:(NSArray *)args {
-    NSLog(@"nodeit.emit %@ %@", eventName, args);
-    
-    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
-    
-    [nodeit callWebScriptMethod:@"emit"
-                  withArguments:[[NSArray arrayWithObject:eventName] arrayByAddingObjectsFromArray:args]];
 }
 
 // Create a new file
@@ -74,6 +80,16 @@
 
 // Open a particular file
 - (void)open:(NSString *)path {
+    if (!self.ready) {
+        NSLog(@"When ready, will open file %@", path);
+        if (pathsToOpen == nil) {
+            pathsToOpen = [NSArray arrayWithObject:path];
+        } else {
+            pathsToOpen = [pathsToOpen arrayByAddingObject:path];
+        }
+        return;
+    }
+    
     NSLog(@"Open file %@", path);
     WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
     [nodeit callWebScriptMethod:@"open" withArguments:[NSArray arrayWithObject:path]];

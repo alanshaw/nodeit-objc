@@ -14,9 +14,21 @@
 
 @synthesize webView;
 @synthesize bridgeTo;
+@synthesize bridgeFrom;
 
 #pragma mark -
 #pragma mark NSApplicationDelegate
+
+-(id) init {
+    self = [super init];
+	if (self) {
+        bridgeTo = [[NDTBridgeTo alloc] init];
+        bridgeFrom = [[NDTBridgeFrom alloc] init];
+        
+        bridgeFrom.bridgeTo = bridgeTo;
+	}
+	return self;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSLog(@"nodeit did finish launching");
@@ -26,26 +38,24 @@
     
     [[webView mainFrame] loadRequest:request];
 }
-/*
+
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
-    NSLog(@"Open %@", filename);
-    return NO;
+    [bridgeTo open:filename];
+    return YES;
 }
-*/
+
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
+    for (id path in filenames) {
+        [bridgeTo open:path];
+    }
+}
 
 #pragma mark -
 #pragma mark WebFrameLoadDelegate
 
 - (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowObject forFrame:(WebFrame *)frame {
-    bridgeTo = [[NDTBridgeTo alloc] init];
-    
     [bridgeTo attachToWindowObject:windowObject];
-    
-    NDTBridgeFrom *bridgeFrom = [[NDTBridgeFrom alloc] init];
-    
     [bridgeFrom attachToWindowObject:windowObject];
-    
-    bridgeFrom.bridgeTo = bridgeTo;
 }
 
 #pragma mark -

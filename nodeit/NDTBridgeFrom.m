@@ -20,6 +20,9 @@
     if (sel == @selector(log:)) {
         return @"log";
     }
+    if (sel == @selector(ready:)) {
+        return @"ready";
+    }
     if (sel == @selector(open:cb:)) {
         return @"open";
     }
@@ -40,23 +43,30 @@
 }
 
 + (BOOL)isKeyExcludedFromWebScript:(const char *)property {
+    if (strcmp(property, "isReady") == 0) {
+        return YES;
+    }
     return NO;
 }
 
 #pragma mark -
 #pragma mark NDTBridgeFrom
 
-- (void) dealloc {
+- (void)dealloc {
 	windowObject = nil;
 }
 
-- (void) attachToWindowObject:(WebScriptObject *)wo {
+- (void)attachToWindowObject:(WebScriptObject *)wo {
     windowObject = wo;
     [wo setValue:self forKey:@"nodeitBridge"];
 }
 
 - (void)log:(NSObject *)msg {
     NSLog(@"> %@", msg);
+}
+
+- (void)ready {
+    bridgeTo.ready = YES;
 }
 
 - (void)open:(NSString *)path cb:(WebScriptObject *)cb {
@@ -77,10 +87,10 @@
                                                                      encoding:NSStringEncodingConversionAllowLossy
                                                                         error:&er];
                 if (er == nil) {
-                    [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:[openPanel.filenames objectAtIndex:0], contents, nil]];
+                    [bridgeTo callback:cb error:nil arguments:[NSArray arrayWithObjects:[openPanel.filenames objectAtIndex:0], contents, nil]];
                 } else {
                     NSLog(@"%@", er);
-                    [bridgeTo call:cb error:[er description] arguments:nil];
+                    [bridgeTo callback:cb error:[er description] arguments:nil];
                 }
                 
             } else {
@@ -90,7 +100,7 @@
             }
             
         } else {
-            [bridgeTo call:cb error:@"cancelled" arguments:nil];
+            [bridgeTo callback:cb error:@"cancelled" arguments:nil];
         }
         
     } else {
@@ -100,10 +110,10 @@
                                                              encoding:NSStringEncodingConversionAllowLossy
                                                                 error:&er];
         if (er == nil) {
-            [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
+            [bridgeTo callback:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
         } else {
             NSLog(@"%@", er);
-            [bridgeTo call:cb error:[er description] arguments:nil];
+            [bridgeTo callback:cb error:[er description] arguments:nil];
         }
     }
 }
@@ -122,24 +132,24 @@
             path = savePanel.filename;
             
             if ([contents writeToFile:path atomically:YES encoding:NSStringEncodingConversionAllowLossy error:&er]) {
-                [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
+                [bridgeTo callback:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
             } else {
                 NSLog(@"%@", er);
-                [bridgeTo call:cb error:[er description] arguments:nil];
+                [bridgeTo callback:cb error:[er description] arguments:nil];
             }
             
         } else {
-            [bridgeTo call:cb error:@"cancelled" arguments:nil];
+            [bridgeTo callback:cb error:@"cancelled" arguments:nil];
         }
         
     } else {
         NSLog(@"Save file %@", path);
         
         if ([contents writeToFile:path atomically:YES encoding:NSStringEncodingConversionAllowLossy error:&er]) {
-            [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
+            [bridgeTo callback:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
         } else {
             NSLog(@"%@", er);
-            [bridgeTo call:cb error:[er description] arguments:nil];
+            [bridgeTo callback:cb error:[er description] arguments:nil];
         }
     }
 }

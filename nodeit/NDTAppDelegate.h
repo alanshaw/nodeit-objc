@@ -9,12 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 #import "NDTBridgeTo.h"
+#import "NDTBridgeFrom.h"
 
 @interface NDTAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet WebView *webView;
 @property NDTBridgeTo *bridgeTo;
+@property NDTBridgeFrom *bridgeFrom;
 
 #pragma mark -
 #pragma mark NDTAppDelegate
