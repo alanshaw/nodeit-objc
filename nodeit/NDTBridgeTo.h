@@ -21,5 +21,6 @@
 - (void)emit:(NSString *)eventName withArguments:(NSArray *)args;
 
 - (void)open:(NSString *)path;
+- (void)save;
 
 @end

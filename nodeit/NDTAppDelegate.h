@@ -20,5 +20,6 @@
 #pragma mark NDTAppDelegate
 
 - (IBAction)newDocument:(id)sender;
+- (IBAction)saveDocument:(id)sender;
 
 @end

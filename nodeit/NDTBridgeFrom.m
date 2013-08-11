@@ -57,8 +57,40 @@
 }
 
 - (void)save:(NSString *)path contents:(NSString *)contents cb:(WebScriptObject *)cb {
-    NSLog(@"Saving %@", path);
-    [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
+    NSError *er = nil;
+    
+    if (path == nil || [path isEqualToString:@""]) {
+        NSLog(@"Save new");
+        
+        NSSavePanel *save = [NSSavePanel savePanel];
+        NSInteger result = [save runModal];
+        
+        if (result == NSFileHandlingPanelOKButton) {
+        
+            path = save.filename;
+            
+            if ([contents writeToFile:path atomically:YES encoding:NSStringEncodingConversionAllowLossy error:&er]) {
+                [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
+            } else {
+                NSLog(@"%@", er);
+                [bridgeTo call:cb error:[er description] arguments:nil];
+            }
+            
+        } else {
+            [bridgeTo call:cb error:@"cancelled" arguments:nil];
+        }
+        
+    } else {
+        NSLog(@"Save file %@", path);
+        
+        if ([contents writeToFile:path atomically:YES encoding:NSStringEncodingConversionAllowLossy error:&er]) {
+            [bridgeTo call:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
+        } else {
+            NSLog(@"%@", er);
+            [bridgeTo call:cb error:[er description] arguments:nil];
+        }
+    }
+    
 }
 
 @end

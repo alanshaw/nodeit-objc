@@ -55,4 +55,8 @@
     [bridgeTo open:nil];
 }
 
+- (IBAction)saveDocument:(id)sender {
+    [bridgeTo save];
+}
+
 @end

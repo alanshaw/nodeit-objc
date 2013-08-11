@@ -61,7 +61,7 @@
 - (void)open:(NSString *)path {
     NSString *contents = @"";
     
-    if (path == nil || [path isEqual: @""]) {
+    if (path == nil || [path isEqualToString: @""]) {
         path = @"";
         NSLog(@"New file");
     } else {
@@ -74,6 +74,12 @@
     
     [nodeit callWebScriptMethod:@"open"
                   withArguments:[NSArray arrayWithObjects:path, contents, nil]];
+}
+
+- (void)save {
+    NSLog(@"Save file");
+    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    [nodeit callWebScriptMethod:@"save" withArguments:[NSArray array]];
 }
 
 @end
