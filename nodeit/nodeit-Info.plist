@@ -30,5 +30,24 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+    <key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+                <string>coffee</string>
+                <string>css</string>
+                <string>html</string>
+				<string>js</string>
+                <string>less</string>
+                <string>php</string>
+                <string>markdown</string>
+                <string>md</string>
+                <string>sass</string>
+                <string>xhtml</string>
+                <string>xml</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
