@@ -10,6 +10,7 @@
 
 @implementation NDTBridgeFrom
 
+@synthesize window;
 @synthesize windowObject;
 @synthesize bridgeTo;
 
@@ -25,6 +26,9 @@
     }
     if (sel == @selector(open:cb:)) {
         return @"open";
+    }
+    if (sel == @selector(close:contents:cb:)) {
+        return @"close";
     }
     if (sel == @selector(save:contents:cb:)) {
         return @"save";
@@ -57,6 +61,7 @@
 }
 
 - (void)attachToWindowObject:(WebScriptObject *)wo {
+    NSLog(@"Attaching nodeitBridge to window");
     windowObject = wo;
     [wo setValue:self forKey:@"nodeitBridge"];
 }
@@ -116,6 +121,21 @@
             [bridgeTo callback:cb error:[er description] arguments:nil];
         }
     }
+}
+
+- (void)close:(NSString *)path contents:(NSString *)contents cb:(WebScriptObject *)cb {
+    NSLog(@"Close %@", path);
+    
+    // If no documents in the editor, close the window
+    int docCount = [bridgeTo count];
+    NSLog(@"Doc count %i", docCount);
+    
+    // About to become zero
+    if (docCount == 1) {
+        [window close];
+    }
+    
+    [bridgeTo callback:cb error:nil arguments:nil];
 }
 
 - (void)save:(NSString *)path contents:(NSString *)contents cb:(WebScriptObject *)cb {

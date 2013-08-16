@@ -11,7 +11,7 @@
 #import "NDTBridgeTo.h"
 #import "NDTBridgeFrom.h"
 
-@interface NDTAppDelegate : NSObject <NSApplicationDelegate>
+@interface NDTAppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet WebView *webView;
@@ -19,10 +19,15 @@
 @property NDTBridgeFrom *bridgeFrom;
 
 #pragma mark -
-#pragma mark NDTAppDelegate
+#pragma mark NSApplicationDelegate
 
 - (IBAction)newDocument:(id)sender;
 - (IBAction)saveDocument:(id)sender;
 - (IBAction)openDocument:(id)sender;
+
+#pragma mark -
+#pragma mark NSWindowDelegate
+
+- (BOOL)windowShouldClose:(id)sender;
 
 @end

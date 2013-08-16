@@ -22,6 +22,8 @@
 }
 
 - (void)attachToWindowObject:(WebScriptObject *)wo {
+    NSLog(@"Attaching nodeitBridgeCallback to window");
+    
     windowObject = wo;
     
     /**
@@ -30,7 +32,7 @@
      * @param {Function} fn Function to invoke
      * @param {*} ... Variable length args to pass to the function
      */
-    [wo evaluateWebScript:@"window.nodeitBridgeCall = function (fn, er) { var args = Array.prototype.slice.call(arguments, 1); if (er) { args[0] = new Error(er) } fn.apply(window, args) }"];
+    [wo evaluateWebScript:@"window.nodeitBridgeCallback = function (fn, er) { var args = Array.prototype.slice.call(arguments, 1); if (er) { args[0] = new Error(er) } fn.apply(window, args) }"];
 }
 
 - (void)setReady:(BOOL)readyState {
@@ -61,20 +63,20 @@
     
     NSLog(@"nodeitBridgeCall %@", args);
     
-    [windowObject callWebScriptMethod:@"nodeitBridgeCall" withArguments:args];
+    [windowObject callWebScriptMethod:@"nodeitBridgeCallback" withArguments:args];
 }
 
 // Create a new file
 - (void)neu {
     NSLog(@"New file");
-    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
     [nodeit callWebScriptMethod:@"neu" withArguments:nil];
 }
 
 // Open an unknown file (select file from dialog)
 - (void)open {
     NSLog(@"Open unknown file");
-    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
     [nodeit callWebScriptMethod:@"open" withArguments:nil];
 }
 
@@ -91,14 +93,26 @@
     }
     
     NSLog(@"Open file %@", path);
-    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
     [nodeit callWebScriptMethod:@"open" withArguments:[NSArray arrayWithObject:path]];
 }
 
 - (void)save {
     NSLog(@"Save file");
-    WebScriptObject* nodeit = [windowObject evaluateWebScript:@"nodeit"];
-    [nodeit callWebScriptMethod:@"save" withArguments:[NSArray array]];
+    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    [nodeit callWebScriptMethod:@"save" withArguments:nil];
+}
+
+- (int)count {
+    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    return [(NSNumber *)[nodeit callWebScriptMethod:@"count" withArguments:[NSArray array]] intValue];
+}
+
+- (BOOL)closeAll {
+    NSLog(@"Close all");
+    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    [nodeit callWebScriptMethod:@"closeAll" withArguments:nil];
+    return YES;
 }
 
 @end

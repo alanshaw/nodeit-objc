@@ -27,5 +27,7 @@
 - (void)open;
 - (void)open:(NSString *)path;
 - (void)save;
+- (int)count;
+- (BOOL)closeAll;
 
 @end

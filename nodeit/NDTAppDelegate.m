@@ -12,6 +12,7 @@
 
 @implementation NDTAppDelegate
 
+@synthesize window;
 @synthesize webView;
 @synthesize bridgeTo;
 @synthesize bridgeFrom;
@@ -32,6 +33,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSLog(@"nodeit did finish launching");
+    bridgeFrom.window = window;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"nodeit"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
@@ -59,9 +61,10 @@
 }
 
 #pragma mark -
-#pragma mark NDTAppDelegate
+#pragma mark NSApplicationDelegate
 
 - (IBAction)newDocument:(id)sender {
+    [window makeKeyAndOrderFront:self];
     [bridgeTo neu];
 }
 
@@ -70,7 +73,16 @@
 }
 
 - (IBAction)openDocument:(id)sender {
+    [window makeKeyAndOrderFront:self];
     [bridgeTo open];
+}
+
+#pragma mark -
+#pragma mark NSWindowDelegate
+
+- (BOOL)windowShouldClose:(id)sender {
+    NSLog(@"Window should close");
+    return [bridgeTo closeAll];
 }
 
 @end
