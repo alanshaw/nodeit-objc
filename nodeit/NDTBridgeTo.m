@@ -61,7 +61,7 @@
     
     args = [[NSArray arrayWithObjects:cb, msg, nil] arrayByAddingObjectsFromArray: args];
     
-    NSLog(@"nodeitBridgeCall %@", args);
+    NSLog(@"nodeitBridgeCallback %@", args);
     
     [windowObject callWebScriptMethod:@"nodeitBridgeCallback" withArguments:args];
 }

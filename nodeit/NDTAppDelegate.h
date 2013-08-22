@@ -30,4 +30,9 @@
 
 - (BOOL)windowShouldClose:(id)sender;
 
+#pragma mark -
+#pragma mark WebUIDelegate
+
+- (BOOL)webView:(WebView *)sender runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame;
+
 @end

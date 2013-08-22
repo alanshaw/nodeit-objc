@@ -85,4 +85,22 @@
     return [bridgeTo closeAll];
 }
 
+#pragma mark -
+#pragma mark WebUIDelegate
+
+- (BOOL)webView:(WebView *)sender runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame {
+    NSLog(@"JS confirm");
+    NSAlert *alert = [[NSAlert alloc] init];
+    
+    [alert addButtonWithTitle:@"Yes"];
+    [alert addButtonWithTitle:@"No"];
+    [alert setMessageText:message];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    
+    if ([alert runModal] == NSAlertFirstButtonReturn)
+        return YES;
+    else
+        return NO;
+}
+
 @end
