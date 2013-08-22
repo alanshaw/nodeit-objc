@@ -4,6 +4,26 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>coffee</string>
+				<string>css</string>
+				<string>html</string>
+				<string>js</string>
+				<string>json</string>
+				<string>less</string>
+				<string>php</string>
+				<string>markdown</string>
+				<string>md</string>
+				<string>sass</string>
+				<string>xhtml</string>
+				<string>xml</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
@@ -17,7 +37,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.0</string>
+	<string>0.0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>LSApplicationCategoryType</key>
@@ -30,24 +50,5 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-    <key>CFBundleDocumentTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-                <string>coffee</string>
-                <string>css</string>
-                <string>html</string>
-				<string>js</string>
-                <string>less</string>
-                <string>php</string>
-                <string>markdown</string>
-                <string>md</string>
-                <string>sass</string>
-                <string>xhtml</string>
-                <string>xml</string>
-			</array>
-		</dict>
-	</array>
 </dict>
 </plist>
