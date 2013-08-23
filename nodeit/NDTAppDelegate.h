@@ -19,7 +19,7 @@
 @property NDTBridgeFrom *bridgeFrom;
 
 #pragma mark -
-#pragma mark NSApplicationDelegate
+#pragma mark NDTAppDelegate
 
 - (IBAction)newDocument:(id)sender;
 - (IBAction)saveDocument:(id)sender;

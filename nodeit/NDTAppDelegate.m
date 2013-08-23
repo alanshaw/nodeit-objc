@@ -43,6 +43,7 @@
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
     [bridgeTo open:filename];
+    [window makeKeyAndOrderFront:self];
     return YES;
 }
 
@@ -50,6 +51,7 @@
     for (id path in filenames) {
         [bridgeTo open:path];
     }
+    [window makeKeyAndOrderFront:self];
 }
 
 #pragma mark -
@@ -61,7 +63,7 @@
 }
 
 #pragma mark -
-#pragma mark NSApplicationDelegate
+#pragma mark NDTAppDelegate
 
 - (IBAction)newDocument:(id)sender {
     [window makeKeyAndOrderFront:self];
