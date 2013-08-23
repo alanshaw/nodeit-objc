@@ -89,7 +89,7 @@
             
             if ([openPanel.filenames count] == 1) {
                 NSString *contents = [[NSString alloc] initWithContentsOfFile:[openPanel.filenames objectAtIndex:0]
-                                                                     encoding:NSStringEncodingConversionAllowLossy
+                                                                     encoding:NSUTF8StringEncoding
                                                                         error:&er];
                 if (er == nil) {
                     [bridgeTo callback:cb error:nil arguments:[NSArray arrayWithObjects:[openPanel.filenames objectAtIndex:0], contents, nil]];
@@ -112,7 +112,7 @@
         NSLog(@"Open file %@", path);
         
         NSString *contents = [[NSString alloc] initWithContentsOfFile:path
-                                                             encoding:NSStringEncodingConversionAllowLossy
+                                                             encoding:NSUTF8StringEncoding
                                                                 error:&er];
         if (er == nil) {
             [bridgeTo callback:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
@@ -151,7 +151,7 @@
         
             path = savePanel.filename;
             
-            if ([contents writeToFile:path atomically:YES encoding:NSStringEncodingConversionAllowLossy error:&er]) {
+            if ([contents writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:&er]) {
                 [bridgeTo callback:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
             } else {
                 NSLog(@"%@", er);
@@ -165,7 +165,7 @@
     } else {
         NSLog(@"Save file %@", path);
         
-        if ([contents writeToFile:path atomically:YES encoding:NSStringEncodingConversionAllowLossy error:&er]) {
+        if ([contents writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:&er]) {
             [bridgeTo callback:cb error:nil arguments:[NSArray arrayWithObjects:path, contents, nil]];
         } else {
             NSLog(@"%@", er);
