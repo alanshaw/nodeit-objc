@@ -57,6 +57,10 @@
 #pragma mark -
 #pragma mark WebFrameLoadDelegate
 
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
+    sender.mainFrame.frameView.allowsScrolling = NO;
+}
+
 - (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowObject forFrame:(WebFrame *)frame {
     [bridgeTo attachToWindowObject:windowObject];
     [bridgeFrom attachToWindowObject:windowObject];
