@@ -83,6 +83,21 @@
     [bridgeTo open];
 }
 
+- (IBAction)increaseFontSize:(id)sender {
+    NSLog(@"Increase font size");
+    [bridgeTo increaseFontSize];
+}
+
+- (IBAction)decreaseFontSize:(id)sender {
+    NSLog(@"Decrease font size");
+    [bridgeTo decreaseFontSize];
+}
+
+- (IBAction)resetFontSize:(id)sender {
+    NSLog(@"Reset font size");
+    [bridgeTo resetFontSize];
+}
+
 #pragma mark -
 #pragma mark NSWindowDelegate
 

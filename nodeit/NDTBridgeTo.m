@@ -115,4 +115,24 @@
     return YES;
 }
 
+- (WebScriptObject *)getPlugin:(NSString *)pluginId {
+    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    return [nodeit callWebScriptMethod:@"getPlugin" withArguments:[NSArray arrayWithObject:pluginId]];
+}
+
+- (void)increaseFontSize {
+    WebScriptObject *plugin = [self getPlugin:@"font-size"];
+    [plugin callWebScriptMethod:@"increase" withArguments:nil];
+}
+
+- (void)decreaseFontSize {
+    WebScriptObject *plugin = [self getPlugin:@"font-size"];
+    [plugin callWebScriptMethod:@"decrease" withArguments:nil];
+}
+
+- (void)resetFontSize {
+    WebScriptObject *plugin = [self getPlugin:@"font-size"];
+    [plugin callWebScriptMethod:@"reset" withArguments:nil];
+}
+
 @end
