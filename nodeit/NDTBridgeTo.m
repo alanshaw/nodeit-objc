@@ -66,18 +66,20 @@
     [windowObject callWebScriptMethod:@"nodeitBridgeCallback" withArguments:args];
 }
 
+- (WebScriptObject *)getNodeit {
+    return [windowObject evaluateWebScript:@"nodeit"];
+}
+
 // Create a new file
 - (void)neu {
     NSLog(@"New file");
-    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
-    [nodeit callWebScriptMethod:@"neu" withArguments:nil];
+    [[self getNodeit] callWebScriptMethod:@"neu" withArguments:nil];
 }
 
 // Open an unknown file (select file from dialog)
 - (void)open {
     NSLog(@"Open unknown file");
-    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
-    [nodeit callWebScriptMethod:@"open" withArguments:nil];
+    [[self getNodeit] callWebScriptMethod:@"open" withArguments:nil];
 }
 
 // Open a particular file
@@ -93,31 +95,27 @@
     }
     
     NSLog(@"Open file %@", path);
-    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
-    [nodeit callWebScriptMethod:@"open" withArguments:[NSArray arrayWithObject:path]];
+    [[self getNodeit] callWebScriptMethod:@"open" withArguments:[NSArray arrayWithObject:path]];
 }
 
 - (void)save {
     NSLog(@"Save file");
-    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
-    [nodeit callWebScriptMethod:@"save" withArguments:nil];
+    [[self getNodeit] callWebScriptMethod:@"save" withArguments:nil];
 }
 
 - (int)count {
-    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
+    WebScriptObject *nodeit = [self getNodeit];
     return [(NSNumber *)[nodeit callWebScriptMethod:@"count" withArguments:[NSArray array]] intValue];
 }
 
 - (BOOL)closeAll {
     NSLog(@"Close all");
-    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
-    [nodeit callWebScriptMethod:@"closeAll" withArguments:nil];
+    [[self getNodeit] callWebScriptMethod:@"closeAll" withArguments:nil];
     return YES;
 }
 
 - (WebScriptObject *)getPlugin:(NSString *)pluginId {
-    WebScriptObject *nodeit = [windowObject evaluateWebScript:@"nodeit"];
-    return [nodeit callWebScriptMethod:@"getPlugin" withArguments:[NSArray arrayWithObject:pluginId]];
+    return [[self getNodeit] callWebScriptMethod:@"getPlugin" withArguments:[NSArray arrayWithObject:pluginId]];
 }
 
 - (void)increaseFontSize {

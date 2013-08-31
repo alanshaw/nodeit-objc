@@ -30,6 +30,7 @@
 - (int)count;
 - (BOOL)closeAll;
 
+- (WebScriptObject *)getNodeit;
 - (WebScriptObject *)getPlugin:(NSString *)pluginId;
 
 - (void)increaseFontSize;
