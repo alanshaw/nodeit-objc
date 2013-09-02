@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E73C166017D34D59007506AE /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73C165F17D34D59007506AE /* Sparkle.framework */; };
+		E73C166117D34D6E007506AE /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E73C165F17D34D59007506AE /* Sparkle.framework */; };
 		E753C32017B59F91005CAF76 /* NDTBridgeFrom.m in Sources */ = {isa = PBXBuildFile; fileRef = E753C31F17B59F91005CAF76 /* NDTBridgeFrom.m */; };
 		E753C32317B6917D005CAF76 /* NDTBridgeTo.m in Sources */ = {isa = PBXBuildFile; fileRef = E753C32217B6917D005CAF76 /* NDTBridgeTo.m */; };
+		E762CCB217D3465C00192463 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = E762CCB117D3465C00192463 /* dsa_pub.pem */; };
 		E765383217B03EC600926854 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E765383117B03EC600926854 /* Cocoa.framework */; };
 		E765383C17B03EC600926854 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E765383A17B03EC600926854 /* InfoPlist.strings */; };
 		E765383E17B03EC600926854 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E765383D17B03EC600926854 /* main.m */; };
@@ -21,9 +24,6 @@
 		E765385C17B03EC600926854 /* nodeitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E765385B17B03EC600926854 /* nodeitTests.m */; };
 		E765388017B0426200926854 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = E765387F17B0426200926854 /* icon.iconset */; };
 		E765388217B045A600926854 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E765388117B045A600926854 /* WebKit.framework */; };
-		E7B2E89217CA96E000A77DEF /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B2E89117CA96E000A77DEF /* Sparkle.framework */; };
-		E7B2E89417CA975200A77DEF /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7B2E89117CA96E000A77DEF /* Sparkle.framework */; };
-		E7B2E89617CAB40800A77DEF /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = E7B2E89517CAB40800A77DEF /* dsa_pub.pem */; };
 		E7FB749517B05DA000910EC0 /* nodeit in Resources */ = {isa = PBXBuildFile; fileRef = E7FB749417B05DA000910EC0 /* nodeit */; };
 /* End PBXBuildFile section */
 
@@ -44,17 +44,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E7B2E89417CA975200A77DEF /* Sparkle.framework in CopyFiles */,
+				E73C166117D34D6E007506AE /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E73C165F17D34D59007506AE /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		E753C31E17B59F91005CAF76 /* NDTBridgeFrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDTBridgeFrom.h; sourceTree = "<group>"; };
 		E753C31F17B59F91005CAF76 /* NDTBridgeFrom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDTBridgeFrom.m; sourceTree = "<group>"; };
 		E753C32117B6917D005CAF76 /* NDTBridgeTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDTBridgeTo.h; sourceTree = "<group>"; };
 		E753C32217B6917D005CAF76 /* NDTBridgeTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NDTBridgeTo.m; sourceTree = "<group>"; };
+		E762CCB117D3465C00192463 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		E765382E17B03EC600926854 /* nodeit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nodeit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E765383117B03EC600926854 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E765383417B03EC600926854 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -76,8 +78,6 @@
 		E765385B17B03EC600926854 /* nodeitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nodeitTests.m; sourceTree = "<group>"; };
 		E765387F17B0426200926854 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		E765388117B045A600926854 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		E7B2E89117CA96E000A77DEF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		E7B2E89517CAB40800A77DEF /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		E7FB749417B05DA000910EC0 /* nodeit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = nodeit; path = ../../../intellij/fsd/nodeit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +88,7 @@
 			files = (
 				E765388217B045A600926854 /* WebKit.framework in Frameworks */,
 				E765383217B03EC600926854 /* Cocoa.framework in Frameworks */,
-				E7B2E89217CA96E000A77DEF /* Sparkle.framework in Frameworks */,
+				E73C166017D34D59007506AE /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 		E765383017B03EC600926854 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E7B2E89117CA96E000A77DEF /* Sparkle.framework */,
+				E73C165F17D34D59007506AE /* Sparkle.framework */,
 				E765388117B045A600926854 /* WebKit.framework */,
 				E765383117B03EC600926854 /* Cocoa.framework */,
 				E765384F17B03EC600926854 /* SenTestingKit.framework */,
@@ -164,7 +164,7 @@
 		E765383817B03EC600926854 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E7B2E89517CAB40800A77DEF /* dsa_pub.pem */,
+				E762CCB117D3465C00192463 /* dsa_pub.pem */,
 				E765387F17B0426200926854 /* icon.iconset */,
 				E765383917B03EC600926854 /* nodeit-Info.plist */,
 				E765383A17B03EC600926854 /* InfoPlist.strings */,
@@ -272,7 +272,7 @@
 				E765384817B03EC600926854 /* MainMenu.xib in Resources */,
 				E765388017B0426200926854 /* icon.iconset in Resources */,
 				E7FB749517B05DA000910EC0 /* nodeit in Resources */,
-				E7B2E89617CAB40800A77DEF /* dsa_pub.pem in Resources */,
+				E762CCB217D3465C00192463 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
