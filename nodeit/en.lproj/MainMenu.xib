@@ -1694,14 +1694,6 @@
 					<int key="connectionID">562</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">resetFontSize:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="649848874"/>
-					</object>
-					<int key="connectionID">563</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">frameLoadDelegate</string>
 						<reference key="source" ref="743855632"/>
@@ -2816,7 +2808,6 @@
 						<string key="increaseFontSize:">id</string>
 						<string key="newDocument:">id</string>
 						<string key="openDocument:">id</string>
-						<string key="resetFontSize:">id</string>
 						<string key="saveDocument:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
@@ -2834,10 +2825,6 @@
 						</object>
 						<object class="IBActionInfo" key="openDocument:">
 							<string key="name">openDocument:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="resetFontSize:">
-							<string key="name">resetFontSize:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="saveDocument:">

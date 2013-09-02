@@ -128,9 +128,4 @@
     [plugin callWebScriptMethod:@"decrease" withArguments:nil];
 }
 
-- (void)resetFontSize {
-    WebScriptObject *plugin = [self getPlugin:@"font-size"];
-    [plugin callWebScriptMethod:@"reset" withArguments:nil];
-}
-
 @end

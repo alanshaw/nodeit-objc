@@ -93,11 +93,6 @@
     [bridgeTo decreaseFontSize];
 }
 
-- (IBAction)resetFontSize:(id)sender {
-    NSLog(@"Reset font size");
-    [bridgeTo resetFontSize];
-}
-
 #pragma mark -
 #pragma mark NSWindowDelegate
 

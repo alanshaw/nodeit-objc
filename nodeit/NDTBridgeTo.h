@@ -35,6 +35,5 @@
 
 - (void)increaseFontSize;
 - (void)decreaseFontSize;
-- (void)resetFontSize;
 
 @end

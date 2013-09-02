@@ -27,7 +27,6 @@
 
 - (IBAction)increaseFontSize:(id)sender;
 - (IBAction)decreaseFontSize:(id)sender;
-- (IBAction)resetFontSize:(id)sender;
 
 #pragma mark -
 #pragma mark NSWindowDelegate
